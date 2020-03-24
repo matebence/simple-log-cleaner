@@ -1,0 +1,1 @@
+.js, .jpg, .css, .png, .flv, .gif, .ico, .jpeg, .swf, .rss, .xml, .cur, .otf, .ttf, .woff, .eot, .svg, .json
