@@ -6,9 +6,15 @@ class Robots:
     __bot_ips: None
     __bots: None
 
-    def __init__(self, file_name):
-        self.__bots = open(Path.FILES.value + file_name, "r", encoding="utf8").readline().split(", ")
+    def __init__(self):
+        self.__bots = ""
         self.__bot_ips = set()
+
+    def set_bots_source(self, file_name):
+        self.__bots = open(Path.FILES.value + file_name, "r", encoding="utf8").readline().split(", ")
+
+    def get_bots_source(self):
+        return self.__bots
 
     def black_list_ip(self, requested_url, ip_address):
         if self.__ROBOT in requested_url.lower():
