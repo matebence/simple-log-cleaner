@@ -2,10 +2,15 @@ from enum import Enum
 
 
 class Columns(Enum):
+    INDEX_COLUMN = "INDEX_COLUMN"
+    USER_ID = "USER_ID"
     IP_ADDRESS = "IP_ADDRESS"
     COOKIE_ID = "COOKIE_ID"
-    USER_ID = "USER_ID"
+    USER = "USER"
     TIMESTAMP = "TIMESTAMP"
+    UNIX_TIME = "UNIX_TIME"
+    LENGTH = "LENGTH"
+    STT = "STT"
     REQUEST_METHOD = "REQUEST_METHOD"
     REQUEST_URL = "REQUEST_URL"
     HTTP_VERSION = "HTTP_VERSION"
@@ -13,4 +18,3 @@ class Columns(Enum):
     FILE_SIZE = "FILE_SIZE"
     REFERER = "REFERER"
     USER_AGENT = "USER_AGENT"
-    UNIX_TIME = "UNIX_TIME"

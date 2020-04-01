@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 
 
-class UnixTime:
+class Time:
     __date_time: None
     __time_zone: None
 

@@ -12,7 +12,7 @@ class Identify:
             return {
                 Columns.IP_ADDRESS.value: regex.group(1),
                 Columns.COOKIE_ID.value: regex.group(2),
-                Columns.USER_ID.value: regex.group(3),
+                Columns.USER.value: regex.group(3),
                 Columns.TIMESTAMP.value: regex.group(4),
                 Columns.REQUEST_METHOD.value: regex.group(5),
                 Columns.REQUEST_URL.value: regex.group(6),

@@ -10,4 +10,4 @@ class Analyze:
 
     def generate_time_length(self): pass
 
-    def analise_and_build(self): pass
+    def analyze_and_build(self): pass
