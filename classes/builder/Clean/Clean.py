@@ -6,14 +6,14 @@ class Clean:
 
     def define_redundant_columns(self, columns): pass
 
-    def remove_redundant_data_by(self): pass
+    def remove_redundant_data(self): pass
 
-    def remove_http_statuses_by(self): pass
+    def remove_http_statuses(self): pass
 
-    def remove_http_methods_by(self): pass
+    def remove_http_methods(self): pass
 
-    def remove_http_requests_by(self): pass
+    def remove_http_requests(self): pass
 
-    def remove_robots_by(self): pass
+    def remove_robots(self): pass
 
     def clean_and_build(self): pass

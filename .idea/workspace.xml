@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd77e2ae-e133-4adb-adf3-a0e1285ec813" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/log_cleanup.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/log_cleanup.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/builder/Analyze/Analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/builder/Analyze/Analyze.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/builder/Analyze/AnalyzeLog.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/builder/Analyze/AnalyzeLog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/builder/Analyze/options/UnixTime.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/builder/Analyze/options/Time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/builder/Clean/Clean.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/builder/Clean/Clean.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/builder/Clean/CleanLog.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/builder/Clean/CleanLog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/builder/Clean/options/Identify.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/builder/Clean/options/Identify.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/utilities/Columns.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/utilities/Columns.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,9 +21,32 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/log_cleanup$AnalyzeLog.coverage" NAME="AnalyzeLog Coverage Results" MODIFIED="1585752951322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/builder/Analyze" />
     <SUITE FILE_PATH="coverage/log_cleanup$main.coverage" NAME="main Coverage Results" MODIFIED="1585757232758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_log_cleaner$main.coverage" NAME="main Coverage Results" MODIFIED="1586247702002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Clean.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/builder/Clean/Clean.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CleanLog.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/builder/Clean/CleanLog.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="82" column="47" lean-forward="true" selection-start-line="82" selection-start-column="47" selection-end-line="82" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -38,6 +61,8 @@
       <find>&quot;a&quot;</find>
       <find>1582119924</find>
       <find>unix</find>
+      <find>_by</find>
+      <find />
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -51,16 +76,17 @@
         <option value="$PROJECT_DIR$/classes/builder/options/Robots.py" />
         <option value="$PROJECT_DIR$/classes/builder/CleanLog.py" />
         <option value="$PROJECT_DIR$/classes/builder/Clean/options/Identify.py" />
-        <option value="$PROJECT_DIR$/classes/builder/Clean/CleanLog.py" />
         <option value="$PROJECT_DIR$/classes/utilities/Columns.py" />
         <option value="$PROJECT_DIR$/classes/builder/Analyze/options/STTLenght.py" />
         <option value="$PROJECT_DIR$/classes/builder/Analyze/options/Time.py" />
         <option value="$PROJECT_DIR$/classes/builder/Analyze/options/User.py" />
         <option value="$PROJECT_DIR$/classes/builder/Analyze/options/Lenght.py" />
+        <option value="$PROJECT_DIR$/classes/builder/Analyze/options/Length.py" />
+        <option value="$PROJECT_DIR$/classes/builder/Clean/Clean.py" />
         <option value="$PROJECT_DIR$/classes/builder/Analyze/AnalyzeLog.py" />
         <option value="$PROJECT_DIR$/classes/builder/Analyze/Analyze.py" />
-        <option value="$PROJECT_DIR$/classes/builder/Analyze/options/Length.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/classes/builder/Clean/CleanLog.py" />
       </list>
     </option>
   </component>
@@ -89,40 +115,65 @@
         <subPane>
           <expand>
             <path>
-              <item name="log_cleanup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="log_cleanup" type="462c0819:PsiDirectoryNode" />
+              <item name="python-log-cleaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-log-cleaner" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="log_cleanup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="log_cleanup" type="462c0819:PsiDirectoryNode" />
+              <item name="python-log-cleaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-log-cleaner" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="log_cleanup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="log_cleanup" type="462c0819:PsiDirectoryNode" />
+              <item name="python-log-cleaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-log-cleaner" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
               <item name="builder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="log_cleanup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="log_cleanup" type="462c0819:PsiDirectoryNode" />
+              <item name="python-log-cleaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-log-cleaner" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
               <item name="builder" type="462c0819:PsiDirectoryNode" />
               <item name="Analyze" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="log_cleanup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="log_cleanup" type="462c0819:PsiDirectoryNode" />
+              <item name="python-log-cleaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-log-cleaner" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
               <item name="builder" type="462c0819:PsiDirectoryNode" />
               <item name="Analyze" type="462c0819:PsiDirectoryNode" />
               <item name="options" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="log_cleanup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="log_cleanup" type="462c0819:PsiDirectoryNode" />
+              <item name="python-log-cleaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-log-cleaner" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="builder" type="462c0819:PsiDirectoryNode" />
+              <item name="Clean" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python-log-cleaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-log-cleaner" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="builder" type="462c0819:PsiDirectoryNode" />
+              <item name="Clean" type="462c0819:PsiDirectoryNode" />
+              <item name="options" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python-log-cleaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-log-cleaner" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
               <item name="utilities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python-log-cleaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-log-cleaner" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python-log-cleaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-log-cleaner" type="462c0819:PsiDirectoryNode" />
+              <item name="in" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -136,7 +187,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -215,15 +266,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1929" y="-9" width="1938" height="1098" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32901832" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32362458" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3214671" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18689582" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1895811" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -251,7 +303,7 @@
         <state relative-caret-position="312">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -291,9 +343,6 @@
     <entry file="file://$PROJECT_DIR$/files/statuses.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/utilities/Path.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/builder/Clean/options/Http.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-403" />
@@ -301,13 +350,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/builder/Clean/options/Files.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/builder/Clean/Clean.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/builder/Clean/options/Identify.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -330,16 +372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="5273" selection-start-line="5273" selection-end-line="5273" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/builder/Clean/CleanLog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -367,37 +399,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classes/builder/Analyze/options/Length.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/in/web.log">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="120">
+          <caret line="5" column="49" lean-forward="true" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        <state relative-caret-position="456">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/builder/Analyze/Analyze.py">
+    <entry file="file://$PROJECT_DIR$/classes/utilities/Path.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="120">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/builder/Analyze/AnalyzeLog.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="214">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="30" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/builder/Analyze/options/Length.py">
+    <entry file="file://$PROJECT_DIR$/classes/builder/Analyze/Analyze.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="24">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/builder/Clean/Clean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/builder/Clean/CleanLog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="82" column="47" lean-forward="true" selection-start-line="82" selection-start-column="47" selection-end-line="82" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

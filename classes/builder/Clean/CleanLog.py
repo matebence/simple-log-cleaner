@@ -8,6 +8,7 @@ from classes.builder.Clean.options.Http import Http
 from classes.builder.Clean.options.Identify import Identify
 from classes.utilities.Path import Path
 from classes.utilities.Columns import Columns
+from classes.builder.Analyze.AnalyzeLog import AnalyzeLog
 
 
 class CleanLog(Clean):
@@ -38,30 +39,30 @@ class CleanLog(Clean):
         self.__columns = columns
         return self
 
-    def remove_redundant_data_by(self):
+    def remove_redundant_data(self):
         self.__files = Files()
         self.__files.set_extensions_source("extensions.txt")
         return self
 
-    def remove_http_statuses_by(self):
+    def remove_http_statuses(self):
         if self.__http is None:
             self.__http = Http()
         self.__http.set_status_source("statuses.txt")
         return self
 
-    def remove_http_methods_by(self):
+    def remove_http_methods(self):
         if self.__http is None:
             self.__http = Http()
         self.__http.set_method_source("methods.txt")
         return self
 
-    def remove_http_requests_by(self):
+    def remove_http_requests(self):
         if self.__http is None:
             self.__http = Http()
         self.__http.set_request_source("requests.txt")
         return self
 
-    def remove_robots_by(self):
+    def remove_robots(self):
         self.__robots = Robots()
         self.__robots.set_agents_source("agents.txt")
         return self
@@ -116,6 +117,8 @@ class CleanLog(Clean):
                     if self.__is_agent_removing_enabled(items[Columns.USER_AGENT.value]):
                         continue
                     self.__write_to_file(items, temp_file)
+
+        return AnalyzeLog().from_file(self.__output_file_name)
 
     def __write_to_file(self, datas, file):
         if (self.__headers is False) and (self.__clean_up is True or self.__robots is None):

@@ -22,7 +22,7 @@ class AnalyzeLog(Analyze):
         self.__input_file_name = input_file_name
         return self
 
-    def to_file(self, output_file_name):
+    def analyze_to_file(self, output_file_name):
         self.__output_file_name = output_file_name
         return self
 
