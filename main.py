@@ -18,6 +18,7 @@ def main():
         .generate_unix_time() \
         .identify_user() \
         .generate_time_length() \
+        .generate_rlength() \
         .analyze_and_build()
 
 

@@ -1,3 +1,5 @@
+import numpy
+
 from classes.utilities.Columns import Columns
 
 
@@ -13,21 +15,20 @@ class Length:
     def get_stt_id(self):
         return self.__stt_id
 
-    def get_length(self, current_row, last_row, index):
-        diff = current_row[Columns.UNIX_TIME.value].iloc[index] - last_row[Columns.UNIX_TIME.value]
-        if self.__STT > diff > 0:
-            return diff
+    def get_length(self, row, prev_row, index):
+        diff = row[Columns.UNIX_TIME.value].iloc[index] - prev_row[Columns.UNIX_TIME.value]
+        if self.__STT > diff >= 0:
+            return float(diff)
         else:
             self.increase_stt_id()
-            return ""
+            return float(numpy.nan)
 
-    def generate(self, current_row):
-        last_row = current_row.iloc[0]
-        for index in range(1, current_row.shape[0]):
-            if current_row[Columns.USER_ID.value].iloc[index] == last_row[Columns.USER_ID.value]:
-                current_row.at[last_row[Columns.INDEX_COLUMN.value], Columns.STT.value] = self.get_stt_id()
-                current_row.at[last_row[Columns.INDEX_COLUMN.value], Columns.LENGTH.value] = str(self.get_length(current_row, last_row, index))
+    def generate(self, row):
+        for index in range(1, row.shape[0]):
+            prev_row = row.iloc[index - 1]
+            if row[Columns.USER_ID.value].iloc[index] == prev_row[Columns.USER_ID.value]:
+                row.at[index - 1, Columns.STT.value] = self.get_stt_id()
+                row.at[index - 1, Columns.LENGTH.value] = self.get_length(row, prev_row, index)
             else:
-                current_row.at[last_row[Columns.INDEX_COLUMN.value], Columns.STT.value] = self.get_stt_id()
+                row.at[index - 1, Columns.STT.value] = self.get_stt_id()
                 self.increase_stt_id()
-            last_row = current_row.iloc[index]

@@ -1,8 +1,10 @@
 import pandas
+import pathlib
 
 from classes.builder.Analyze.options.Time import Time
 from classes.builder.Analyze.options.User import User
 from classes.builder.Analyze.options.Length import Length
+from classes.builder.Analyze.options.RLength import RLength
 from classes.builder.Analyze.Analyze import Analyze
 from classes.utilities.Columns import Columns
 from classes.utilities.Path import Path
@@ -11,6 +13,7 @@ from classes.utilities.Path import Path
 class AnalyzeLog(Analyze):
     __user = None
     __length = None
+    __rlength = None
     __unix_time = None
 
     def __init__(self):
@@ -38,20 +41,44 @@ class AnalyzeLog(Analyze):
         self.__length = Length()
         return self
 
+    def generate_rlength(self):
+        self.__rlength = RLength()
+        return self
+
+    def __does_output_file_exists(self):
+        if pathlib.Path(Path.OUTPUT.value + self.__output_file_name).exists():
+            self.__log = pandas.read_csv(Path.OUTPUT.value + self.__output_file_name, index_col=None)
+
     def analyze_and_build(self):
         self.__log = pandas.read_csv(Path.OUTPUT.value + self.__input_file_name, sep="#", engine="python")
-        self.__log.sort_values(by=[Columns.IP_ADDRESS.value, Columns.TIMESTAMP.value], inplace=True)
 
         if self.__unix_time is not None:
-            self.__log.insert(1, Columns.UNIX_TIME.value, self.__unix_time.generate(self.__log[Columns.TIMESTAMP.value]).unix_seconds())
+            self.__does_output_file_exists()
+            if Columns.UNIX_TIME.value not in self.__log:
+                self.__log.insert(1, Columns.UNIX_TIME.value, '')
+            self.__log[Columns.UNIX_TIME.value] = self.__unix_time.generate(
+                self.__log[Columns.TIMESTAMP.value]).unix_seconds()
+            self.__log.to_csv(Path.OUTPUT.value + self.__output_file_name, index=False)
 
         if self.__user is not None:
-            self.__log.insert(0, Columns.USER_ID.value, self.__user.generate_id(self.__log))
+            self.__does_output_file_exists()
+            self.__log.sort_values(by=[Columns.IP_ADDRESS.value, Columns.TIMESTAMP.value], inplace=True)
+            if Columns.USER_ID.value not in self.__log:
+                self.__log.insert(0, Columns.USER_ID.value, '')
+            self.__log[Columns.USER_ID.value] = self.__user.generate_id(self.__log)
+            self.__log.to_csv(Path.OUTPUT.value + self.__output_file_name, index=False)
 
         if self.__length is not None:
-            self.__log.insert(0, Columns.INDEX_COLUMN.value, self.__log.index)
-            self.__log.insert(3, Columns.LENGTH.value, '')
-            self.__log.insert(4, Columns.STT.value, '')
+            self.__does_output_file_exists()
+            if Columns.LENGTH.value not in self.__log and Columns.STT.value not in self.__log:
+                self.__log.insert(3, Columns.LENGTH.value, '')
+                self.__log.insert(4, Columns.STT.value, '')
             self.__length.generate(self.__log)
+            self.__log.to_csv(Path.OUTPUT.value + self.__output_file_name, index=False)
 
-        self.__log.to_csv(Path.OUTPUT.value + self.__output_file_name, index=False)
+        if self.__rlength is not None:
+            self.__does_output_file_exists()
+            if Columns.RL.value not in self.__log:
+                self.__log.insert(5, Columns.RL.value, '')
+            self.__rlength.generate(self.__log)
+            self.__log.to_csv(Path.OUTPUT.value + self.__output_file_name, index=False)
