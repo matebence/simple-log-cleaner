@@ -1,5 +1,6 @@
 import os
 import pathlib
+import pandas
 
 from classes.builder.Clean.Clean import Clean
 from classes.builder.Clean.options.Robots import Robots
@@ -8,7 +9,6 @@ from classes.builder.Clean.options.Http import Http
 from classes.utilities.Identify import Identify
 from classes.utilities.Path import Path
 from classes.utilities.Columns import Columns
-from classes.builder.Analyze.AnalyzeLog import AnalyzeLog
 
 
 class CleanLog(Clean):
@@ -175,7 +175,7 @@ class CleanLog(Clean):
                         continue
                     self.__write_to_file(items, temp_file)
 
-        return AnalyzeLog().from_file(self.__output_file_name)
+        return pandas.read_csv(Path.OUTPUT.value + self.__output_file_name, sep="#", engine="python")
 
     def __write_to_file(self, datas, file):
         if self.__is_writing_header_data():

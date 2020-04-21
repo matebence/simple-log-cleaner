@@ -6,7 +6,6 @@ from classes.builder.Analyze.options.User import User
 from classes.builder.Analyze.options.Length import Length
 from classes.builder.Analyze.options.RLength import RLength
 from classes.builder.Analyze.Analyze import Analyze
-from classes.builder.Expand.ExpandLog import ExpandLog
 from classes.utilities.Columns import Columns
 from classes.utilities.Path import Path
 
@@ -84,4 +83,4 @@ class AnalyzeLog(Analyze):
             self.__rlength.generate(self.__log)
             self.__log.to_csv(Path.OUTPUT.value + self.__output_file_name, index=False)
 
-        return ExpandLog().from_file(self.__output_file_name)
+        return self.__log
