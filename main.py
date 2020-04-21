@@ -14,12 +14,17 @@ def main():
         .remove_robots() \
         .clean_and_build()
 
-    clean_log.analyze_to_file("web.analyze.csv") \
+    analyze_log = clean_log.to_file("web.analyze.csv") \
         .generate_unix_time() \
         .identify_user() \
         .generate_time_length() \
         .generate_rlength() \
         .analyze_and_build()
+
+    analyze_log.to_file("web.route.csv") \
+        .by_file("mapa.csv") \
+        .generate_routes() \
+        .append_routes_and_build()
 
 
 if __name__ == "__main__":
