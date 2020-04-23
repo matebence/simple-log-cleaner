@@ -26,10 +26,10 @@ def main():
         .generate_rlength() \
         .analyze_and_build()
 
-    route_log = ExpandLog()\
+    route_log = ExpandLog() \
         .from_file("web.analyze.csv") \
         .to_file("web.route.csv") \
-        .by_file("mapa.csv") \
+        .by_domain("https://www.ukf.sk") \
         .generate_routes() \
         .append_routes_and_build()
 
