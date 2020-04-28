@@ -3,12 +3,9 @@ from classes.utilities.Path import Path
 
 class Http:
 
-    __statuses: None
-    __methods: None
-    __requests: None
-
     def __init__(self):
         self.__statuses = self.__methods = self.__requests = ""
+        self.__statuses = self.__methods = self.__requests = None
 
     def set_status_source(self, file_name):
         self.__statuses = open(Path.FILES.value + file_name, "r", encoding="utf8").readline().split(", ")

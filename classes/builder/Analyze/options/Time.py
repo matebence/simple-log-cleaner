@@ -4,8 +4,9 @@ from datetime import datetime
 
 
 class Time:
-    __date_time: None
-    __time_zone: None
+
+    def __init__(self):
+        self.__date_time = self.__time_zone = None
 
     def get_date_time(self):
         return self.__date_time

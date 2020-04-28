@@ -4,6 +4,8 @@ class Clean:
 
     def to_file(self, output_file_name): pass
 
+    def prepend_request_url(self, url): pass
+
     def define_redundant_columns(self, columns): pass
 
     def remove_redundant_data(self): pass

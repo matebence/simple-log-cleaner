@@ -2,10 +2,8 @@ from classes.utilities.Path import Path
 
 
 class Files:
-    __extensions: None
 
-    def __init__(self):
-        self.__extensions = ""
+    __extensions = None
 
     def set_extensions_source(self, file_name):
         self.__extensions = open(Path.FILES.value + file_name, "r", encoding="utf8").readline().split(", ")

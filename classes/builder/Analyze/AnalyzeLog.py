@@ -11,15 +11,10 @@ from classes.utilities.Path import Path
 
 
 class AnalyzeLog(Analyze):
-    __user = None
-    __length = None
-    __rlength = None
-    __unix_time = None
 
     def __init__(self):
-        self.__log = None
-        self.__input_file_name = None
-        self.__output_file_name = None
+        self.__user = self.__length = self.__rlength = self.__unix_time = self.__log = None
+        self.__input_file_name = self.__output_file_name = None
 
     def from_file(self, input_file_name):
         self.__input_file_name = input_file_name

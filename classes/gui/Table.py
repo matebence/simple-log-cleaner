@@ -3,7 +3,8 @@ import pandasgui
 
 class Table:
 
-    __input_data_frame = None
+    def __init__(self):
+        self.__input_data_frame = None
 
     def set_data_frame(self, input_data_frame):
         self.__input_data_frame = input_data_frame

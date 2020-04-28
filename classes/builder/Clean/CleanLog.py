@@ -12,20 +12,12 @@ from classes.utilities.Columns import Columns
 
 
 class CleanLog(Clean):
-    __files = None
-    __columns = None
-    __robots = None
-    __http = None
 
     def __init__(self):
-        self.__input_file_name = None
-        self.__output_file_name = None
-
-        self.__output_file = None
-        self.__input_file = None
-
-        self.__clean_up = False
-        self.__headers = False
+        self.__files = self.__columns = self.__robots = self.__http = self.__url = None
+        self.__input_file_name = self.__output_file_name = None
+        self.__output_file = self.__input_file = None
+        self.__clean_up = self.__headers = False
 
     def from_file(self, input_file_name):
         self.__input_file_name = input_file_name
@@ -33,6 +25,10 @@ class CleanLog(Clean):
 
     def to_file(self, output_file_name):
         self.__output_file_name = output_file_name
+        return self
+
+    def prepend_request_url(self, url):
+        self.__url = url
         return self
 
     def define_redundant_columns(self, columns):
@@ -161,6 +157,8 @@ class CleanLog(Clean):
                         continue
                     self.__write_to_file(items, self.__output_file)
                 else:
+                    items[Columns.REQUEST_URL.value] = self.__url + items[Columns.REQUEST_URL.value]
+
                     if self.__is_file_extension_removing_enabled(items[Columns.REQUEST_URL.value]):
                         continue
                     if self.__is_http_status_removing_enabled(items[Columns.HTTP_STATUS.value]):

@@ -5,12 +5,12 @@ from classes.utilities.Columns import Columns
 
 
 class RLength:
-    __P = 0.4
-    __C = None
 
     def __init__(self):
+        self.__P = 0.4
         self.__rl = 0
         self.__total = 0
+        self.__C = None
 
     def increase_rl(self):
         self.__rl += 1

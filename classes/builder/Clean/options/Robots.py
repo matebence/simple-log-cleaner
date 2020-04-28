@@ -2,13 +2,11 @@ from classes.utilities.Path import Path
 
 
 class Robots:
-    __ROBOT = "robots.txt"
-    __bot_ips: None
-    __agents: None
 
     def __init__(self):
-        self.__agents = ""
         self.__bot_ips = set()
+        self.__ROBOT = "robots.txt"
+        self.__agents: None
 
     def set_agents_source(self, file_name):
         self.__agents = open(Path.FILES.value + file_name, "r", encoding="utf8").readline().split(", ")

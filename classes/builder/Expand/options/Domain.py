@@ -6,11 +6,10 @@ from classes.utilities.Columns import Columns
 
 class Domain:
 
-    __request = None
-
     def __init__(self, domain):
         self.__domain = domain
         self.__servers = []
+        self.__request = None
 
     def init_session(self):
         self.__request = requests.session()
@@ -31,15 +30,8 @@ class Domain:
     def is_inserted(self, row, index):
         return row[Columns.REQUEST_URL.value].iloc[index] != row[Columns.REQUEST_URL.value].iloc[index - 2]
 
-    def insert_row(self, index, data_frame, insert):
-        first = data_frame.iloc[:index, ]
-        second = data_frame.iloc[index:, ]
-
-        data_frame = first.append(insert).append(second)
-        data_frame.index = data_frame.index + 1
-        data_frame = data_frame.sort_index()
-
-        return data_frame
+    def insert_row(self, index, row):
+        return row.append(row.iloc[index], ignore_index=False).sort_index().reset_index(drop=True)
 
     def generate(self, row):
         index = 1
@@ -50,9 +42,11 @@ class Domain:
                     self.init_session()
                     approval = self.__request.get(self.__domain + prev_row[Columns.REQUEST_URL.value])
                     if approval.ok and not self.web_page_contains_url(row, index, approval) and self.is_inserted(row, index):
-                        row = self.insert_row(index - 1, row, row.iloc[index - 2])
+                        row = self.insert_row(index - 1, row)
                         row.at[index, Columns.LENGTH.value] = 1
                         index -= 1
                 except:
                     index -= 1
             index += 1
+
+        return row
