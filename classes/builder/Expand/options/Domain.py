@@ -4,7 +4,7 @@ import random
 from classes.utilities.Columns import Columns
 
 
-class Route:
+class Domain:
 
     __request = None
 
