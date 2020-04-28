@@ -14,6 +14,7 @@ class Route:
         while index < row.shape[0]:
             prev_row = row.iloc[index - 1]
             if row[Columns.RL.value].iloc[index] == prev_row[Columns.RL.value] \
+                    and prev_row[Columns.REFERER.value] == row[Columns.REFERER.value].iloc[index] \
                     and prev_row[Columns.REQUEST_URL.value] != row[Columns.REFERER.value].iloc[index] \
                     and prev_row[Columns.REQUEST_URL.value] != row[Columns.REQUEST_URL.value].iloc[index] \
                     and False not in [str(x) not in row[Columns.REFERER.value].iloc[index] for x in self.__ignored_items]:
